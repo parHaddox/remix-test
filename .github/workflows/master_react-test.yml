@@ -65,4 +65,10 @@ jobs:
           app-name: 'react-test'
           slot-name: 'Production'
           package: .
+      
+      - name: Restart Azure Web App
+        uses: azure/cli@v1
+        with:
+          inlineScript: az webapp restart --name react-test --resource-group appsvc_linux_centralus
+        
           
